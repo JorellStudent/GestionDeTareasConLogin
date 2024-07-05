@@ -48,6 +48,7 @@ CREATE TABLE `users` (
 ## Funcionalidades Adicionales (Opcionales)
 - [Almacenamiento de Datos](#almacenamiento-de-datos)
 - [Filtrado y Búsqueda de Tareas](#filtrado-y-búsqueda-de-tareas)
+- [Notificación de Expiración](#notificación-de-expiración)
 
 ## Estructura del Proyecto
 El proyecto está dividido en un backend desarrollado con Node.js y Express que proporciona una API RESTful para la gestión de tareas y autenticación de usuarios. El frontend está construido con Vue.js para ofrecer una interfaz de usuario dinámica y interactiva.
@@ -76,32 +77,25 @@ Usuarios autenticados pueden crear nuevas tareas especificando título, descripc
 
 ![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/c4cbd876-5924-432e-83ad-e933f6600bc3)
 
-
-
 ### Edición de Tarea
 Usuarios pueden editar el título, descripción o fecha de vencimiento de tareas existentes.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/576d73ab-ba9a-444b-a27e-10c463db2ec7)
-
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/10c400ff-351c-4125-909b-875759633bfa)
 
 ### Eliminación de Tarea
 Usuarios pueden eliminar tareas de su lista.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/84b253c0-ea76-49b3-99a4-c82659ad5171)
-
-
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/bc81a41f-a632-4c1f-9799-8b5cb4162fd1)
 
 ### Marcar Tarea como Completada
 Usuarios pueden cambiar el estado de una tarea de "pendiente" a "completada".
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/579e31e1-1145-47ef-80d0-02095ad18ba3)
-
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/3bd88fa8-968a-4e36-bfcb-000bd7649939)
 
 ### Ver Lista de Tareas
 Usuarios pueden visualizar todas sus tareas con detalles como título, descripción, fecha de vencimiento y estado.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/cd45b953-030d-4380-8db4-98d0497e2df2)
-
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/ecbad40d-e44b-421d-98e7-ad54791fa5c8)
 
 ### Almacenamiento de Datos
 Persistencia de tareas usando MySQL u otro sistema de base de datos.
@@ -111,7 +105,16 @@ Persistencia de tareas usando MySQL u otro sistema de base de datos.
 ### Filtrado y Búsqueda de Tareas
 Usuarios pueden buscar y filtrar tareas por título, descripción, fecha de vencimiento o estado.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/d282a22f-2734-4ba3-86b8-73f3efcc470e)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/bfdb54d3-33ce-4420-9eb9-479b1c2cee4f)
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/43e01747-b551-4c7e-bdc3-c567ef715985)
+
+### Notificación de Expiración
+Al usuario se le mostrara en la lista cuales seon las tareas que van a expirar (24 horas antes) y la que ya expiraron.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/d7d0a9eb-ae4e-4164-b118-1e324cad1b72)
+
+
 
 
 
