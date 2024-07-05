@@ -9,20 +9,43 @@ Este proyecto consiste en una plataforma web para la gestión de tareas, donde l
 - Vue.js
 - MySQL (opcional, para almacenamiento de datos)
 
+## Base de Datos
+La aplicación utiliza MySQL para almacenar las tareas y usuarios. A continuación se muestra la estructura de la base de datos:
+
+-- Base de datos: `task_manager`
+
+-- Estructura de tabla para la tabla `tasks`
+CREATE TABLE `tasks` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `due_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `completed` varchar(250) DEFAULT '0',
+  `user_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Estructura de tabla para la tabla `users`
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
 ## Funcionalidades Principales
-- Registro de Usuario
-- Inicio de Sesión
-- Creación de Tarea
-- Edición de Tarea
-- Eliminación de Tarea
-- Marcar Tarea como Completada
-- Ver Lista de Tareas
+- [Registro de Usuario](#registro-de-usuario)
+- [Inicio de Sesión](#inicio-de-sesión)
+- [Creación de Tarea](#creación-de-tarea)
+- [Edición de Tarea](#edición-de-tarea)
+- [Eliminación de Tarea](#eliminación-de-tarea)
+- [Marcar Tarea como Completada](#marcar-tarea-como-completada)
+- [Ver Lista de Tareas](#ver-lista-de-tareas)
 
 ## Funcionalidades Adicionales (Opcionales)
-- Almacenamiento de Datos
-- Filtrado y Búsqueda de Tareas
-- Notificaciones
-- Compartir Tareas
+- [Almacenamiento de Datos](#almacenamiento-de-datos)
+- [Filtrado y Búsqueda de Tareas](#filtrado-y-búsqueda-de-tareas)
 
 ## Estructura del Proyecto
 El proyecto está dividido en un backend desarrollado con Node.js y Express que proporciona una API RESTful para la gestión de tareas y autenticación de usuarios. El frontend está construido con Vue.js para ofrecer una interfaz de usuario dinámica y interactiva.
@@ -34,8 +57,54 @@ El proyecto está dividido en un backend desarrollado con Node.js y Express que 
 4. Ejecutar la Aplicación
 5. Acceder a la Aplicación
 
-## Contribuciones
-¡Contribuciones son bienvenidas! Si deseas mejorar esta plataforma, por favor abre un pull request. Para cambios importantes, por favor abre primero un issue para discutir lo que te gustaría cambiar.
+## Detalles de Funcionalidades
 
-## Licencia
-Este proyecto está licenciado bajo la Licencia MIT: https://opensource.org/licenses/MIT
+### Registro de Usuario
+Los usuarios pueden registrarse proporcionando un nombre de usuario único y una contraseña segura.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/5ffca038-14d2-400d-9ed1-5ee891da4e62)
+
+### Inicio de Sesión
+Usuarios registrados pueden iniciar sesión utilizando sus credenciales.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/b36b44bb-e143-49de-adfe-e8de8e82c9f6)
+
+### Creación de Tarea
+Usuarios autenticados pueden crear nuevas tareas especificando título, descripción y fecha de vencimiento opcional.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/0a821946-82f5-409c-8331-6df63ca08a95)
+
+
+### Edición de Tarea
+Usuarios pueden editar el título, descripción o fecha de vencimiento de tareas existentes.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/50373f38-6e53-438c-a068-20e88d01d9c8)
+
+
+### Eliminación de Tarea
+Usuarios pueden eliminar tareas de su lista.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/3f89d45a-af77-439e-88e7-4b53e5711074)
+
+
+### Marcar Tarea como Completada
+Usuarios pueden cambiar el estado de una tarea de "pendiente" a "completada".
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/14a27261-6b68-41fe-84d1-67307c968c9c)
+
+### Ver Lista de Tareas
+Usuarios pueden visualizar todas sus tareas con detalles como título, descripción, fecha de vencimiento y estado.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/2f5347da-1660-464c-aaaa-c54273febe1b)
+
+### Almacenamiento de Datos
+Persistencia de tareas usando MySQL u otro sistema de base de datos.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/9d917207-47af-4bf9-a7a4-f2ad83fa4ce7)
+
+### Filtrado y Búsqueda de Tareas
+Usuarios pueden buscar y filtrar tareas por título, descripción, fecha de vencimiento o estado.
+
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/fddab1fc-cb5f-48aa-a5ee-74c5b3293b80)
+
+
