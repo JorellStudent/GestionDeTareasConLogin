@@ -75,7 +75,7 @@ Usuarios registrados pueden iniciar sesión utilizando sus credenciales.
 ### Creación de Tarea
 Usuarios autenticados pueden crear nuevas tareas especificando título, descripción y fecha de vencimiento opcional.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/c4cbd876-5924-432e-83ad-e933f6600bc3)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/373e5426-cc8e-47af-a248-57da11442300)
 
 ### Edición de Tarea
 Usuarios pueden editar el título, descripción o fecha de vencimiento de tareas existentes.
