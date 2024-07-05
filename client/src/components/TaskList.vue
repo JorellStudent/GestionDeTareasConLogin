@@ -16,7 +16,7 @@
     </div>
 
     <ul>
-      <li v-for="task in filteredTasks" :key="task.id" class="task-item">
+      <li v-for="task in filteredTasks" :key="task.id" class="task-item" :class="{ 'expired-task': isTaskExpired(task) }">
         <input type="checkbox" :checked="task.completed" @change="toggleTaskCompletion(task)">
         <div v-if="!task.editMode" class="task-details">
           <span :class="{ completed: task.completed }">
@@ -42,6 +42,12 @@
               <button @click="cancelEdit(task)" class="action-button gray">Cancelar</button>
             </div>
           </form>
+        </div>
+        <div v-if="isTaskExpired(task)" class="task-status">
+          <strong>Tarea expirada</strong>
+        </div>
+        <div v-else-if="isExpiringSoon(task)" class="task-status">
+          <strong>¡Advertencia!</strong> Esta tarea expira en menos de 24 horas.
         </div>
       </li>
     </ul>
@@ -71,8 +77,11 @@ export default {
           return false;
         }
         // Filtrar por fecha
-        if (this.filters.date && task.due_date !== this.filters.date) {
-          return false;
+        if (this.filters.date) {
+          const taskDate = new Date(task.due_date).toISOString().split('T')[0];
+          if (taskDate !== this.filters.date) {
+            return false;
+          }
         }
         // Filtrar por estado completado
         if (!this.filters.completed && task.completed) {
@@ -144,6 +153,17 @@ export default {
       if (confirm('¿Está seguro de que desea eliminar esta tarea?')) {
         this.deleteTask(id);
       }
+    },
+    isExpiringSoon(task) {
+      const now = new Date();
+      const dueDate = new Date(task.due_date);
+      const timeDifference = dueDate - now;
+      return timeDifference <= 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+    },
+    isTaskExpired(task) {
+      const now = new Date();
+      const dueDate = new Date(task.due_date);
+      return dueDate < now;
     },
     handleError(message, error) {
       console.error(message, error);
@@ -252,4 +272,19 @@ export default {
   opacity: 0.8;
 }
 
+.expiring-soon {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.expired-task {
+  background-color: #ffe0e0; /* Fondo rojo claro para tareas vencidas */
+}
+
+@media (max-width: 768px) {
+  .task-list-container {
+    width: 100%; /* Set width to 100% for smaller screens */
+  }
+}
 </style>

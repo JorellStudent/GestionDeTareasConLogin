@@ -1,15 +1,15 @@
 <template>
   <div class="main-layout">
-    <header>
-      <nav>
-        <ul>
-          <li><button @click="toggleAddTask" class="btn btn-primary">Agregar Tarea</button></li>
-          <li><button @click="toggleTaskList" class="btn btn-primary">Lista de Tareas</button></li>
-          <li v-if="isAuthenticated"><button @click="logoutUser" class="btn btn-danger">Cerrar sesión</button></li>
+    <header class="header">
+      <nav class="nav-container">
+        <ul class="nav-list">
+          <li><button @click="toggleAddTask" class="nav-btn btn-add">Agregar Tarea</button></li>
+          <li><button @click="toggleTaskList" class="nav-btn btn-list">Lista de Tareas</button></li>
+          <li v-if="isAuthenticated"><button @click="logoutUser" class="nav-btn btn-logout">Cerrar sesión</button></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="main-content">
       <section v-show="showAddTask">
         <AddTask @taskAdded="refreshTaskList" />
       </section>
@@ -94,58 +94,77 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .main-layout {
-  position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  background-color: #f8f8f8;
   padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-nav ul {
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
   list-style-type: none;
   padding: 0;
+  display: flex;
 }
 
-nav li {
-  display: inline;
+.nav-list li {
   margin-right: 10px;
 }
 
-button {
-  padding: 8px 12px;
-  font-size: 14px;
-  color: white;
+.nav-btn {
+  padding: 12px 20px; /* Aumenta el padding para hacer los botones más grandes */
+  font-size: 16px; /* Aumenta el tamaño de la fuente */
+  color: rgb(255, 255, 255);
   border: none;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
   text-decoration: none;
 }
 
-.btn {
-  background-color: #007bff; /* Color principal */
+.btn-add {
+  background-color: #007bff; /* Color azul para Agregar Tarea */
 }
 
-.btn-danger {
-  background-color: #dc3545; /* Color danger (rojo) */
+.btn-list {
+  background-color: #28a745; /* Color verde para Lista de Tareas */
 }
 
-button:hover {
+.btn-logout {
+  background-color: #dc3545; /* Color rojo para Cerrar sesión */
+}
+
+.nav-btn:hover {
   opacity: 0.8;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 60px; /* Ajusta el padding-top para compensar el header fijo */
 }
 
 .footer {
   background-color: #ffffff;
   color: #000000;
   text-align: center;
-  padding: 20px 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  padding: 10px; /* Ajusta el padding según sea necesario */
   width: 100%;
+  flex-shrink: 0;
+  margin-top: auto; /* Coloca el footer al final */
 }
 
 .footer-content {
