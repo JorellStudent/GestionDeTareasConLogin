@@ -72,30 +72,34 @@ Usuarios registrados pueden iniciar sesión utilizando sus credenciales.
 ### Creación de Tarea
 Usuarios autenticados pueden crear nuevas tareas especificando título, descripción y fecha de vencimiento opcional.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/0a821946-82f5-409c-8331-6df63ca08a95)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/c4cbd876-5924-432e-83ad-e933f6600bc3)
+
 
 
 ### Edición de Tarea
 Usuarios pueden editar el título, descripción o fecha de vencimiento de tareas existentes.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/50373f38-6e53-438c-a068-20e88d01d9c8)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/576d73ab-ba9a-444b-a27e-10c463db2ec7)
 
 
 ### Eliminación de Tarea
 Usuarios pueden eliminar tareas de su lista.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/3f89d45a-af77-439e-88e7-4b53e5711074)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/84b253c0-ea76-49b3-99a4-c82659ad5171)
+
 
 
 ### Marcar Tarea como Completada
 Usuarios pueden cambiar el estado de una tarea de "pendiente" a "completada".
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/14a27261-6b68-41fe-84d1-67307c968c9c)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/579e31e1-1145-47ef-80d0-02095ad18ba3)
+
 
 ### Ver Lista de Tareas
 Usuarios pueden visualizar todas sus tareas con detalles como título, descripción, fecha de vencimiento y estado.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/2f5347da-1660-464c-aaaa-c54273febe1b)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/cd45b953-030d-4380-8db4-98d0497e2df2)
+
 
 ### Almacenamiento de Datos
 Persistencia de tareas usando MySQL u otro sistema de base de datos.
@@ -105,6 +109,7 @@ Persistencia de tareas usando MySQL u otro sistema de base de datos.
 ### Filtrado y Búsqueda de Tareas
 Usuarios pueden buscar y filtrar tareas por título, descripción, fecha de vencimiento o estado.
 
-![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/fddab1fc-cb5f-48aa-a5ee-74c5b3293b80)
+![image](https://github.com/JorellStudent/GestionDeTareasConLogin/assets/167504858/d282a22f-2734-4ba3-86b8-73f3efcc470e)
+
 
 
