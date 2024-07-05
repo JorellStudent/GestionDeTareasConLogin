@@ -15,6 +15,7 @@ La aplicación utiliza MySQL para almacenar las tareas y usuarios. A continuaci�
 -- Base de datos: `task_manager`
 
 -- Estructura de tabla para la tabla `tasks`
+```bash
 CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -25,15 +26,16 @@ CREATE TABLE `tasks` (
   `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
+```
 -- Estructura de tabla para la tabla `users`
+```bash
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
-
+```
 ## Funcionalidades Principales
 - [Registro de Usuario](#registro-de-usuario)
 - [Inicio de Sesión](#inicio-de-sesión)
